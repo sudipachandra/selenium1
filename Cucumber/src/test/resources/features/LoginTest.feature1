@@ -1,0 +1,91 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+#@tag
+#Feature: Title of your feature
+#I want to use this template for my feature file
+#
+#@tag1
+#Scenario: Title of your scenario
+#Given I want to write a step with precondition
+#And some other precondition
+#When I complete action
+#And some other action
+#And yet another action
+#Then I validate the outcomes
+#And check more outcomes
+#
+#@tag2
+#Scenario Outline: Title of your scenario outline
+#Given I want to write a step with <name>
+#When I check for the <value> in step
+#Then I verify the <status> in step
+#
+#Examples:
+#| name  | value | status  |
+#| name1 |     5 | success |
+#| name2 |     7 | Fail    |
+@tag
+Feature: User can use login functionality
+
+  @tag1
+  Scenario: user is able to login successfully
+    Given user has opened the login page
+    When user enter login username "abc"
+    And user enters login password "def"
+    And clicks login button
+    Then user is able to login successfully
+
+    Scenario: some other scenario
+      Given user has opened the login page
+      And clicks login button
+
+  Scenario: user is able to login successfully with same line data
+    Given user has opened the login page
+    When user enter login username "abc" and password "def"
+    And clicks login button
+    Then user is able to login successfully
+    When user go to account page
+    Then user enters following details in account page
+    |name   |sudipa   |
+    |address|bangalore|
+    |phno   |12345679 |
+    |landno |2345     |
+    Then user add as row in table with following data
+    |name|address|phno|landno|
+    |n1  |a1     |111 |123   |
+    |n2  |a2     |222 |1234  |
+    |n3  |a3     |333 |12345 |

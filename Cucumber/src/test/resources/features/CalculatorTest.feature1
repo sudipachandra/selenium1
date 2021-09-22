@@ -1,0 +1,26 @@
+Feature: Testing basic calculator functionality
+
+  Scenario: Basic addition is working
+    Given I have number one as 30
+    And I have number two as 40
+    When I add both numbers
+    Then the sum is 70
+
+  Scenario: Basic addition is working with float
+    Given I have number one float as 30.20
+    And I have number two float as 40.30
+    When I add both numbers
+    Then the float sum is 70.50
+
+  Scenario Outline: Basic addition is working with outline
+    Given I have number one as <firstNo>
+    And I have number two as <secondNo>
+    When I add both numbers
+    Then the sum is <sum>
+
+    Examples:
+    |firstNo|secondNo|sum|
+    |10     |20      |30 |
+    |20     |30      |50 |
+    |30     |40      |70 |
+    |40     |50      |90 |
